@@ -1,7 +1,8 @@
-import React, {useReducer, useEffect} from 'react';
+import React, {useReducer, useEffect, useState} from 'react';
 import Repository from './RepositoryComponent';
 import Loading from './LoadingComponent';
 import Error from './ErrorComponent';
+import { Button } from 'reactstrap';
 
 const initialState={
     loading:true,
@@ -32,6 +33,8 @@ const reducer=(state, action)=>{
 
 function Home({match}) {
     const [state, dispatch]=useReducer(reducer,initialState);
+    const [show, setShow]= useState(6);
+    const [btnState, setBtnState]=useState("block");
 
     useEffect(()=>{
         fetch(`https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${match.params.npage}`)
@@ -43,6 +46,15 @@ function Home({match}) {
         .catch(err=> dispatch({type:"FETCH_ERROR"}) );
     },[state.loading,match.params.npage]);
 
+    const onShowMore=()=>{
+        if(show+6 >= state.items.length){
+            setShow(state.items.length);
+            setBtnState("none");
+        }
+        else{
+            setShow(show+6);
+        }
+    }
     
 
     const RenderItems=()=>{
@@ -53,14 +65,17 @@ function Home({match}) {
             return <Error />;
         }
         else{
-            const renderItems=state.items.map(item=>
-                <Repository title={item.name} description={item.description} image={""} 
+            const renderItems=state.items.slice(0,show).map(item=>
+                <Repository key={item.id} title={item.name} description={item.description} image={""} 
                         stars={item.stargazers_count} issues={item.open_issues} time={item.created_at} />
             );
             return(
                 <div className="row">
                     <div className="col">
-                        {renderItems}   
+                        {renderItems} 
+                        <div className="row">
+                            <Button style={{display:btnState}} color="primary" className="col-md-4 mx-auto" onClick={()=>onShowMore()}>Show More</Button>  
+                        </div>
                     </div>
                 </div>
             );

@@ -38,6 +38,10 @@
   color: #ef0;
 }
 
+.App-home{
+  margin-bottom: 10px;
+}
+
 .App-repository{
   margin-bottom: 10px;
   padding: 5px;

@@ -6,9 +6,9 @@ function Repository({title, description, image, stars, issues, time}){
     return(
         <div className="App-repository">
             <div className="media">
-            <img src={image} class="mr-3" alt="rep img" />
-                <div class="media-body">
-                    <h5 class="mt-0">{title}</h5>
+            <img src={image} className="mr-3" alt="rep img" />
+                <div className="media-body">
+                    <h5 className="mt-0">{title}</h5>
                     <p>{description}</p>
                     <span className="stars">Stars : {stars}</span>
                     <span className="issues">Issues : {issues}</span>

@@ -7,7 +7,7 @@ function  Footer() {
     ]);
 
     const renderLinks=pages.map(
-        item=><li><a href={`/page/${item}`}>{item}</a></li>
+        item=><li key={item}><a href={`/page/${item}`}>{item}</a></li>
     );
 
     return(
