@@ -1,38 +1,79 @@
-.App {
+.App{
+  margin: 0;
+  padding:0;
+  font-family: 'Roboto';
+}
+
+
+.App-header .jumbotron{
+  background-color: rgb(102, 0, 97);
+  border-radius: 0px 0px 5px 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header h1{
+  color: #fff;
+  font-size: 28px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-header .icon{
+  color:#00ce00;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-header li{
+  display: inline;
+  margin:20px;
+  padding:10px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header a{
+  padding:5px 9px 5px 9px;
+  font-size: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  color: #eee;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header a:hover{
+  color: #ef0;
+}
+
+.App-repository{
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px #eee solid;
+  border-radius: 5px;
+}
+
+.App-repository img{
+  background-color: #ccc;
+  padding:35px 10px 35px 10px ;
+}
+
+.App-repository .stars{
+  border:1px #ccc solid;
+  border-radius: 2px;
+  margin-right: 5px;
+  padding: 2px;
+}
+
+.App-repository .issues{
+  border:1px #ccc solid;
+  border-radius: 2px;
+  margin-right: 5px;
+  padding: 2px;
+}
+
+.App-footer li{
+  display: inline;
+  margin-right:10px;
+}
+
+.App-loading{
+  text-align: center;
+  font-size: 26px;
+}
+
+.App-error{
+  text-align: center;
 }
