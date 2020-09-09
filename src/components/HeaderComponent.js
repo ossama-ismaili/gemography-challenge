@@ -6,7 +6,7 @@ function Header() {
         <div className="App-header">
             <Jumbotron>
             <ul className="list-unstyled">
-                <li><a href="https://www.github.com/ossama-ismaili/"><i className="fa fa-github"></i></a></li>
+                <li><a href="https://www.github.com/in/ossama-ismaili/"><i className="fa fa-github"></i></a></li>
                 <li><a href="https://www.linkedin.com/ossama-ismaili/"><i className="fa fa-linkedin"></i></a></li>
                 <li><a href="https://www.facebook.com/ossama.ismaili.dev/"><i className="fa fa-facebook"></i></a></li>
             </ul>
